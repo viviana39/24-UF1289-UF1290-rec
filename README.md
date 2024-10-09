@@ -1,59 +1,39 @@
-# UF1291
+# UF1289 - UF1291
 
-**Despliegue y puesta en funcionamiento de componentes software**
+### Diseño de Elementos Software con Tecnologías basadas en Componentes
+### Implementación e Integración de Elementos Software con Tecnologías basadas en Componentes
 
-## Prueba Práctica de Configuración de Entornos y Acceso a Base de Datos
+## Prueba Práctica de Programación Orientada a Objetos
 
-**Instrucciones Generales:**
+### Criterios de Evaluación
+   - Correcta implementación de las clases y herencia.
+   - Conexión establecida y funcional a la base de datos MySQL.
+   - Uso de POO para encapsular la lógica de acceso a datos.
+   - Estructura clara y bien organizada del código.
 
-La prueba consta de dos partes. Se te proporciona el código de una pequeña aplicación web en Node.js, con un frontend en HTML y un backend que consulta una base de datos MySQL. Debes realizar las tareas descritas a continuación en el tiempo disponible. 
+---
 
-### Parte 1: Configuración y Ejecución Local de la Aplicación
+### Parte 1: Refactorización con Clases (POO y Componentes)
+   **Tiempo estimado:** 2 horas
 
-En esta primera parte, deberás determinar cómo configurar y ejecutar la aplicación en tu entorno local.
+#### Instrucciones:
+1. Refactoriza el archivo `config.js` para crear una clase `Database`. Esta clase debe manejar la conexión a la base de datos MySQL y la ejecución de consultas SQL.
+2. Implementa en la clase `Database` el método `getPersonById`, que reciba el `id` de un estudiante y devuelva los datos correspondientes desde la base de datos.
 
-Forkea el repositorio que encontrarás en:
+**Entregables:**
+   - Clase `Database` correctamente implementada.
+   - Conexión establecida a la base de datos y datos de estudiantes recuperados usando el método `getPersonById`.
 
-```https://github.com/elMestreAcademy/24-UF1291```
+---
 
-### Parte 2: Acceso a MySQL en un Entorno de Producción
+### Parte 2: Herencia y Jerarquía de Clases
+   **Tiempo estimado:** 2 horas
 
-Se te ha proporcionado acceso a una base de datos MySQL en un servidor remoto dentro de la misma LAN. Deberás realizar los siguientes pasos:
+#### Instrucciones:
+1. Crea una clase `Person` con atributos comunes como `id`, `name`, `email`.
+2. Implementa las subclases `Person`, `Professor`, y `Admin`, que hereden de `Person`. Estas subclases deben tener un método `getRole` que devuelva su rol específico (por ejemplo, "Estudiante", "Profesor", etc.).
+3. Usa estas clases para gestionar los roles de los usuarios de la base de datos. (ej, muestra a administradores y profesores sin puntuación y con un color de fondo distintivo)
 
-La dirección del servidor es la ```192.168.1.224```. El puerto es el ```3306```
-
-El acceso a la base de datos MySQL se realizará usando tu DNI completo (incluyendo letra) como el nombre de usuario.
-
-La contraseña será tu DNI completo, pero escrito al revés (incluyendo letra).
-
-- Por ejemplo, si tu DNI es 12345678A:
-  - Usuario: 12345678A
-  - Contraseña: A87654321
-
-**Recuperación de datos del estudiante:**
-
-Debes consultar a la base de datos y localizar la información del estudiante cuyo ID coincida con tu DNI (pero sin la letra final). 
-
-## Entrega
-
-Al finalizar, debes subir el proyecto a un repositorio en GitHub o GitLab.
-
-Incluye el archivo de configuración con las credenciales correctas para la base de datos local. (No subas el del servidor remoto, puesto que contiene información privada)
-
-Proporciona una captura de pantalla que muestre la aplicación funcionando tanto en local como con el acceso a la base de datos MySQL del servidor.
-
-**Incluye en el examen en papel:**
-
-- Una transcripción  del archivo de configuración
-- Los datos del alumno indicado en la base de datos remota
-- Un enlace al repositorio con las capturas de pantalla
-
-### Criterios de Evaluación:
-
-Correcta configuración del entorno local.
-
-Funcionamiento de la aplicación tanto en local como en el servidor de producción.
-
-Correcta implementación del acceso a la base de datos MySQL y recuperación de los datos del estudiante.
-
-Estructura limpia y organizada del código y repositorio Git.
+**Entregables:**
+   - Implementación de las clases `Person`, `Person`, `Professor` y `Admin`.
+   - Método `getRole` correctamente implementado en cada subclase.

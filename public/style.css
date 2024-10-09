@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-image: url('PIXNIO-2051244-4896x3672.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h1 {
+  color: mintcream;
+}
+label, input {
+  font-size: 1.2em;
+}
+label {
+  color: lightgoldenrodyellow;
+}
+input[type=text] {
+  background-color: mintcream;
+}
+#wrapper {
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#wrapper * {
+  width: 20rem;
+  margin: 0.4rem;
+  padding: 0;
+}
+#person-info {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: none;
+  background-color: mintcream;
+}
+#person-info div {
+  margin-bottom: 10px;
+}
+#person-info.student-info {
+	background-color: mintcream;
+}
+#person-info.professor-info {
+	background-color: PaleTurquoise;
+}
+#person-info.admin-info {
+	background-color: lightSalmon;
+}
+#person-info.professor-info {
+	background-color: blue;
+}
+#error {
+  color: red;
+  background-color: mintcream;
+}

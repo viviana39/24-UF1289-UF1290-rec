@@ -4,102 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Information</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-image: url('PIXNIO-3163814-5760x3840.jpeg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-    h1 {
-      color: mintcream;
-    }
-    label, input {
-      font-size: 1.2em;
-    }
-    label {
-      color: lightgoldenrodyellow;
-    }
-    input[type=text] {
-      background-color: mintcream;
-    }
-    #wrapper {
-      max-width: 90%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    #wrapper * {
-      width: 20rem;
-      margin: 0.4rem;
-      padding: 0;
-    }
-    #student-info {
-      margin-top: 20px;
-      border: 1px solid #ddd;
-      padding: 10px;
-      display: none;
-      background-color: mintcream;
-    }
-    #student-info div {
-      margin-bottom: 10px;
-    }
-    #error {
-      color: red;
-      background-color: mintcream;
-    }
-  </style>
+  <title>Person Information</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id="wrapper">
-  <h1>Search Student by ID</h1>
-  <label for="student-id">Enter Student ID:</label>
-  <input type="number" id="student-id" placeholder="1">
-  <button onclick="getStudentInfo()">Search</button>
+  <h1>Search Person by ID</h1>
+  <label for="person-id">Enter Person ID:</label>
+  <input type="number" id="person-id" placeholder="1">
+  <button id="btn-search">Search</button>
 
-  <div id="student-info">
-    <div><strong>Name:</strong> <span id="student-name"></span></div>
-    <div><strong>Score:</strong> <span id="student-score"></span></div>
+  <div id="person-info">
+    <div><strong>Name:</strong> <span id="person-name"></span></div>
+    <div><strong>Score:</strong> <span id="person-score"></span></div>
   </div>
 
   <div id="error"></div>
 
-  <script>
-    function getStudentInfo() {
-      const studentId = document.getElementById('student-id').value;
-      const studentInfoDiv = document.getElementById('student-info');
-      const errorDiv = document.getElementById('error');
-
-      // Validar que el campo no esté vacío
-      if (!studentId) {
-        errorDiv.textContent = 'Please enter a Student ID.';
-        studentInfoDiv.style.display = 'none';
-        return;
-      }
-
-      fetch(`/student/${studentId}`)
-        .then(response => response.json())
-        .then(data => {
-          if (data.error) {
-            errorDiv.textContent = data.error;
-            studentInfoDiv.style.display = 'none';
-          } else {
-            document.getElementById('student-name').textContent = data.name;
-            document.getElementById('student-score').textContent = data.score;
-            studentInfoDiv.style.display = 'block';
-            errorDiv.textContent = '';
-          }
-        })
-        .catch(err => {
-          errorDiv.textContent = 'Error fetching student data';
-          studentInfoDiv.style.display = 'none';
-        });
-    }
-  </script>
+  <script src="front.js"></script>
 </div>
 </body>
 </html>
